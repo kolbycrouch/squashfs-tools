@@ -15,7 +15,7 @@
 # Obviously, you must select at least one of the available gzip, lzma, lzo
 # compression types.
 #
-GZIP_SUPPORT = 1
+#GZIP_SUPPORT = 1
 
 ########### Building XZ support #############
 #
@@ -37,7 +37,7 @@ GZIP_SUPPORT = 1
 # LZO_SUPPORT line below. If needed, uncomment and set LZO_DIR to the
 # installation prefix.
 #
-#LZO_SUPPORT = 1
+LZO_SUPPORT = 1
 #LZO_DIR = /usr/local
 
 
@@ -93,7 +93,7 @@ GZIP_SUPPORT = 1
 # in Mksquashfs.  Obviously the compression algorithm must have been
 # selected to be built
 #
-COMP_DEFAULT = gzip
+COMP_DEFAULT = lzo
 
 ###############################################
 #  Extended attribute (XATTRs) build options  #
@@ -104,7 +104,7 @@ COMP_DEFAULT = gzip
 # If your C library or build/target environment doesn't support XATTRs then
 # comment out the next line to build Mksquashfs and Unsquashfs without XATTR
 # support
-#XATTR_SUPPORT = 1
+XATTR_SUPPORT = 0
 
 # Select whether you wish xattrs to be stored by Mksquashfs and extracted
 # by Unsquashfs by default.  If selected users can disable xattr support by
@@ -112,7 +112,7 @@ COMP_DEFAULT = gzip
 #
 # If unselected, Mksquashfs/Unsquashfs won't store and extract xattrs by
 # default.  Users can enable xattrs by using the -xattrs option.
-XATTR_DEFAULT = 1
+XATTR_DEFAULT = 0
 
 
 ###############################################

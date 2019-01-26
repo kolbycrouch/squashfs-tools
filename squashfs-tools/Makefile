@@ -38,7 +38,7 @@
 # installation prefix.
 #
 LZO_SUPPORT = 1
-#LZO_DIR = /usr/local
+LZO_DIR = /usr/local
 
 
 ########### Building LZ4 support #############

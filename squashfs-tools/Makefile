@@ -37,8 +37,8 @@
 # LZO_SUPPORT line below. If needed, uncomment and set LZO_DIR to the
 # installation prefix.
 #
-LZO_SUPPORT = 1
-LZO_DIR = /usr/local
+#LZO_SUPPORT = 1
+#LZO_DIR = /usr/local
 
 
 ########### Building LZ4 support #############
@@ -85,7 +85,7 @@ LZO_DIR = /usr/local
 # To build using the ZSTD library - install the library and uncomment the
 # ZSTD_SUPPORT line below.
 #
-#ZSTD_SUPPORT = 1
+ZSTD_SUPPORT = 1
 
 ######## Specifying default compression ########
 #
@@ -93,7 +93,7 @@ LZO_DIR = /usr/local
 # in Mksquashfs.  Obviously the compression algorithm must have been
 # selected to be built
 #
-COMP_DEFAULT = lzo
+COMP_DEFAULT = zstd
 
 ###############################################
 #  Extended attribute (XATTRs) build options  #
@@ -193,7 +193,7 @@ ifeq ($(ZSTD_SUPPORT),1)
 CFLAGS += -DZSTD_SUPPORT
 MKSQUASHFS_OBJS += zstd_wrapper.o
 UNSQUASHFS_OBJS += zstd_wrapper.o
-LIBS += -lzstd
+LIBS += -Bstatic -lzstd
 COMPRESSORS += zstd
 endif
 
